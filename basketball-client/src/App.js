@@ -9,7 +9,7 @@ import CommonFooter from './components/commonFooter';
 const App = () => (
   <div className="App">
     <CommonHeader />
-    <p>test</p>
+    <p>main</p>
     <CommonFooter />
   </div>
 );
