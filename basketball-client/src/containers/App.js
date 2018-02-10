@@ -3,13 +3,14 @@
  */
 import React from 'react';
 import './App.css';
-import CommonHeader from './components/commonHeader';
-import CommonFooter from './components/commonFooter';
+import NavList from '../containers/navList';
+import CommonHeader from '../components/commonHeader';
+import CommonFooter from '../components/commonFooter';
 
 const App = () => (
   <div className="App">
     <CommonHeader />
-    <p>main</p>
+    <NavList />
     <CommonFooter />
   </div>
 );

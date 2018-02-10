@@ -1,0 +1,39 @@
+.common-side-nav {
+  width: 20%;
+  text-align: center;
+  min-height: 100%;
+  background: #fff;
+  padding: 40px 20px;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  box-shadow: -10px 10px 20px #ccc inset;
+}
+
+.common-side-nav-item {
+  font-size: 20px;
+  color: #333;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 10px;
+  transition: all .5s;
+}
+
+.common-side-nav-item:hover {
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  background: #333;
+}
+
+.svg-basketball {
+  position: relative;
+  right: 20px;
+  top: 3px;
+}
+
+.common-side-nav-logo {
+  position: absolute;
+  left: 60px;
+  bottom: 80px;
+}
