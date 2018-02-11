@@ -2,6 +2,16 @@
   height: 100%;
 }
 
+.detail-page {
+  display: inline-block;
+  position: absolute;
+  width: 80%;
+  min-height: 100%;
+  margin: 0;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
 [class*='svg-'] {
   width: 24px;
   height: 24px;

@@ -1,4 +1,5 @@
 .common-side-nav {
+  display: inline-block;
   width: 20%;
   text-align: center;
   min-height: 100%;
@@ -8,6 +9,10 @@
   list-style: none;
   box-sizing: border-box;
   box-shadow: -10px 10px 20px #ccc inset;
+}
+
+.common-side-nav a {
+  text-decoration: none;
 }
 
 .common-side-nav-item {
@@ -36,4 +41,8 @@
   position: absolute;
   left: 60px;
   bottom: 80px;
+}
+
+.team-logo {
+  background-image: url('http://7xq0qv.com1.z0.glb.clouddn.com/e3ed0e8af39fb68e9ef0789ea2c011a8.gif');
 }
