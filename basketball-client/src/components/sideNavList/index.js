@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-10 14:49:35
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-11 15:55:59
+ * @Last Modified time: 2018-02-11 16:31:43
  */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -22,7 +22,7 @@ const SideNavList = ({ navList }) => (
 );
 
 SideNavList.propTypes = {
-  navList: PropTypes.arrayOf(PropTypes.string).isRequired
+  navList: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default SideNavList;
