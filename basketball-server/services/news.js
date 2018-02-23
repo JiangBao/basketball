@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-22 16:49:30
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-22 18:08:48
+ * @Last Modified time: 2018-02-23 16:18:01
  */
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -12,46 +12,111 @@ const dataFormat = require('./dataFormat');
 
 class News {
   /**
-   * get news (recent & top)
+   * get news list (recent & top)
    * @return {object}
    */
-  async getNews() {
+  async getNewsList() {
     try {
       const url = CONST.URL.NEWS;
       const resp = await axios.get(url);
       const $ = cheerio.load(resp.data);
       const recent = this.parseRecentList($);
       const top = this.parseTopList($);
+
       return { recent, top }; 
     } catch (e) {
-      console.error(`get news ERROR: ${e.stack}`);
+      console.error(`get news list ERROR: ${e.stack}`);
       return dataFormat.errorMsg();
     }
   }
 
+  /**
+   * get news detail
+   * @param  {string} tag
+   * @return {object}
+   */
+  async getNewsDetail(tag) {
+    try {
+      const url = CONST.URL.NEWS + tag;
+      const resp = await axios.get(url);
+      const $ = cheerio.load(resp.data);
+      const detail = this.parseNewsDetail($);
+      
+      return detail;
+    } catch (e) {
+      console.error(`get news detail ERROR: ${e.stack}`);
+      return dataFormat.errorMsg();
+    }
+  }
+
+  /**
+   * get recent news list
+   * @param  {object} $
+   * @return {array}
+   */
   parseRecentList($) {
-    console.log('----- here -----');
     const recentList = [];
+    
     $('.news-list').find('li').each((index, elem) => {
       const main = $(elem).find('.list-hd').find('h4').find('a');
       const title = main.text();
-      const linkList = main.attr('href') && main.attr('href').split(/[\/\.]/);
+      const linkList = main.attr('href') && main.attr('href').split('/');
       const time = $(elem).find('.time').text();
-      const comeFrom = $(elem).find('.comeFrom').find('a').text();
-      const linkTag = linkList.length && linkList[linkList.length - 2];
+      const comeFrom = $(elem).find('.comeFrom').find('a');
+      const comeFromText = comeFrom.text();
+      const comeFromLink = comeFrom.attr('href');
+      const linkTag = linkList && linkList[linkList.length - 1];
+
       title && recentList.push({
         title,
         linkTag,
         time,
-        comeFrom
+        comeFromText,
+        comeFromLink
       })
     });
 
     return recentList;
   }
 
+  /**
+   * get top news list
+   * @param  {object} $
+   * @return {array}
+   */
   parseTopList($) {
+    const topList = [];
 
+    $('.hours24-top').find('li').each((index, elem) => {
+      const main = $(elem).find('a');
+      const title = main.text();
+      const linkList = main.attr('href') && main.attr('href').split('/');
+      const linkTag = linkList && linkList[linkList.length - 1];
+
+      title && topList.push({
+        title,
+        linkTag
+      });
+    });
+
+    return topList;
+  }
+
+  /**
+   * parse news detail
+   * @param  {object} $
+   * @return {object}
+   */
+  parseNewsDetail($) {
+    const title = $('.headline').text();
+    const image = $('.artical-importantPic').find('img').attr('src');
+    const content = $('.artical-main-content').text();
+
+    return {
+      title,
+      image,
+      content
+    }
   }
 }
 
