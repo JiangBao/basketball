@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-10 15:56:07
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-19 15:21:55
+ * @Last Modified time: 2018-02-24 11:31:35
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -26,7 +26,7 @@ class NavList extends Component {
 
 export default connect(
   state => ({
-    nav: state.nav
+    nav: state.nav.nav
   }),
   { changeNav }
 )(NavList);

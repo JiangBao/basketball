@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-11 16:13:48
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-19 15:25:08
+ * @Last Modified time: 2018-02-24 11:31:01
  */
 import { combineReducers } from 'redux';
 import { CHANGE_NAV } from '../actions/nav';
@@ -33,11 +33,12 @@ const initState = {
 export const nav = (state = initState, action) => {
   switch (action.type) {
     case CHANGE_NAV:
-      state.current = action.nav;
-      return state;
+      return {current: action.nav, navList: initState.navList};
     default:
       return state;
   }
 };
 
-export default nav;
+export default combineReducers({
+  nav
+});

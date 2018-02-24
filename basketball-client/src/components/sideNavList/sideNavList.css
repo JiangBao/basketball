@@ -27,9 +27,9 @@
 
 .common-side-nav-item:hover {
   cursor: pointer;
-  font-size: 24px;
+  font-size: 22px;
   color: #fff;
-  background: #333;
+  background: #666;
 }
 
 .common-side-nav-item.active {
