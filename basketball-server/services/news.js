@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-22 16:49:30
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-23 16:18:01
+ * @Last Modified time: 2018-02-24 16:12:16
  */
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -23,7 +23,7 @@ class News {
       const recent = this.parseRecentList($);
       const top = this.parseTopList($);
 
-      return { recent, top }; 
+      return dataFormat.successMsg({ recent, top }); 
     } catch (e) {
       console.error(`get news list ERROR: ${e.stack}`);
       return dataFormat.errorMsg();
@@ -42,7 +42,7 @@ class News {
       const $ = cheerio.load(resp.data);
       const detail = this.parseNewsDetail($);
       
-      return detail;
+      return dataFormat.successMsg(detail);
     } catch (e) {
       console.error(`get news detail ERROR: ${e.stack}`);
       return dataFormat.errorMsg();

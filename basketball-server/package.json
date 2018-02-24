@@ -10,6 +10,7 @@
   "author": "JiangBao <jiangbao1123@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@koa/cors": "^2.2.1",
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
     "koa": "^2.4.1",
