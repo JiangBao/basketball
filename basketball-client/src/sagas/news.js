@@ -13,14 +13,15 @@ import {
 } from 'redux-saga/effects';
 import {
   GET_NEWS_LIST,
-  receiveNewsList
+  GET_NEWS_DETAIL,
+  receiveNewsList,
+  receiveNewsDetail
 } from '../actions/news';
 import * as newsFetch from '../fetch/news';
 
 export function* getNewsList() {
   try {
     const resp = yield call(newsFetch.getNewsList);
-    console.log(resp);
     if (resp.code === 200) {
       yield put(receiveNewsList(resp.data));
     }
@@ -29,8 +30,20 @@ export function* getNewsList() {
   }
 }
 
+export function* getNewsDetail(action) {
+  try {
+    const resp = yield call(newsFetch.getNewsDetail, action.tag);
+    if (resp.code === 200) {
+      yield put(receiveNewsDetail(action.tag, resp.data))
+    }
+  } catch (e) {
+    console.error(`GET_NEWS_DETAIL ERROR: ${e.stack}`);
+  }
+}
+
 export function* watchNews() {
   yield all([
-    takeLatest(GET_NEWS_LIST, getNewsList)
+    takeLatest(GET_NEWS_LIST, getNewsList),
+    takeLatest(GET_NEWS_DETAIL, getNewsDetail)
   ])
 }

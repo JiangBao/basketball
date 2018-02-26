@@ -10,12 +10,12 @@ import PropTypes from 'prop-types';
 import './topNewsList.css';
 import TopNewsItem from './topNewsItem';
 
-const TopNewsList = ({ topNews }) => (
+const TopNewsList = ({ topNews, onClickNews }) => (
   <ul className="top-news-list">
     <li><h4>24小时新闻榜</h4></li>
     {
       topNews.map((news, index) => (
-        <TopNewsItem key={news.linkTag} news={news} index={index+1} />
+        <TopNewsItem key={news.linkTag} news={news} index={index+1} onClickNews={onClickNews} />
       ))
     }
   </ul>

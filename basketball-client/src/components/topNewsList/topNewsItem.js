@@ -7,8 +7,8 @@
  */
 import React from 'react';
 
-const TopNewsItem = ({news, index}) => (
-  <li className="top-news-item">
+const TopNewsItem = ({news, index, onClickNews}) => (
+  <li className="top-news-item" onClick={onClickNews.bind(this, news.linkTag)}>
     <p>{index}、{news.title}</p>
   </li>
 );

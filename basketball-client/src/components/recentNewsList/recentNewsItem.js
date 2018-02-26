@@ -7,9 +7,9 @@
  */
 import React from 'react';
 
-const RecentNewsItem = ({ news }) => (
+const RecentNewsItem = ({ news, onClickNews }) => (
   <li className="recent-news-item">
-    <h3 className="recent-news-item-title">{ news.title }</h3>
+    <h3 className="recent-news-item-title" onClick={onClickNews.bind(this, news.linkTag)}>{ news.title }</h3>
     <p>{ news.time }</p>
     <p>来自：<a href={news.comeFromLink} target="_blank">{ news.comeFromText }</a></p>
   </li>

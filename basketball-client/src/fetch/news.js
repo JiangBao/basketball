@@ -9,3 +9,5 @@ import URLS from '../config/urls';
 import * as fetch from './fetch';
 
 export const getNewsList = () => fetch.get(URLS.NEWS_LIST)
+
+export const getNewsDetail = (tag) => fetch.get(URLS.NEWS_DETAIL, {tag: tag})

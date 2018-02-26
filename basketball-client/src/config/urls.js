@@ -8,7 +8,8 @@
 const prefix = 'http://127.0.0.1:8888/';
 
 const URLS = {
-  NEWS_LIST: `${prefix}news/list`
+  NEWS_LIST: `${prefix}news/list`,
+  NEWS_DETAIL: `${prefix}news/detail`
 };
 
 export default URLS;
