@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-24 11:55:29
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-26 16:08:20
+ * @Last Modified time: 2018-02-28 17:01:40
  */
 export const GET_NEWS_LIST = 'GET_NEWS_LIST';
 export const GET_NEWS_DETAIL = 'GET_NEWS_DETAIL';
@@ -24,7 +24,7 @@ export const getNewsList = () => ({
  * @param  {object} newsList
  * @return {object}
  */
-export const receiveNewsList = (newsList) => ({
+export const receiveNewsList = newsList => ({
   type: RECEIVE_NEWS_LIST,
   newsList
 });
@@ -34,7 +34,7 @@ export const receiveNewsList = (newsList) => ({
  * @param  {string} tag
  * @return {object}
  */
-export const getNewsDetail = (tag) => ({
+export const getNewsDetail = tag => ({
   type: GET_NEWS_DETAIL,
   tag
 });
@@ -56,7 +56,7 @@ export const receiveNewsDetail = (tag, detail) => ({
  * @param  {boolean} isShow
  * @return {object}
  */
-export const changeNewsDisplay = (isShow=false) => ({
+export const changeNewsDisplay = (isShow = false) => ({
   type: CHANGE_NEWS_DISPLAY,
   isShow
 });

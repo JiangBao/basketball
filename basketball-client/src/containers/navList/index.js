@@ -3,26 +3,24 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-10 15:56:07
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-24 11:31:35
+ * @Last Modified time: 2018-02-28 18:27:57
  */
-import React, { Component } from 'react';
+import React from 'react';
+import PropsTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SideNavList from '../../components/sideNavList';
 import { changeNav } from '../../actions/nav';
 
-class NavList extends Component {
-  onSelectNav (nav) {
-    this.props.changeNav(nav);
-  }
+const NavList = ({ nav: { current, navList } }) => (
+  <SideNavList current={current} navList={navList} />
+);
 
-  render () {
-    const { nav: {current, navList} } = this.props;
-    
-    return (
-      <SideNavList current={current} navList={navList} onSelectNav={this.onSelectNav.bind(this)} />
-    )
-  }
-}
+NavList.propTypes = {
+  nav: PropsTypes.shape({
+    current: PropsTypes.string,
+    navList: PropsTypes.array
+  }).isRequired
+};
 
 export default connect(
   state => ({

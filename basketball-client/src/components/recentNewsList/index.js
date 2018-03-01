@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-24 16:25:08
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-24 17:10:53
+ * @Last Modified time: 2018-03-01 10:33:39
  */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -22,7 +22,8 @@ const RecentNewsList = ({ recentNews, onClickNews }) => (
 );
 
 RecentNewsList.propTypes = {
-  recentNews: PropTypes.arrayOf(PropTypes.object).isRequired
+  recentNews: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClickNews: PropTypes.func.isRequired
 };
 
 export default RecentNewsList;

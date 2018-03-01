@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-24 17:12:20
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-24 17:46:33
+ * @Last Modified time: 2018-03-01 10:34:14
  */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -15,14 +15,15 @@ const TopNewsList = ({ topNews, onClickNews }) => (
     <li><h4>24小时新闻榜</h4></li>
     {
       topNews.map((news, index) => (
-        <TopNewsItem key={news.linkTag} news={news} index={index+1} onClickNews={onClickNews} />
+        <TopNewsItem key={news.linkTag} news={news} index={index + 1} onClickNews={onClickNews} />
       ))
     }
   </ul>
 );
 
 TopNewsList.propTypes = {
-  topNews: PropTypes.arrayOf(PropTypes.object).isRequired
+  topNews: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClickNews: PropTypes.func.isRequired
 };
 
 export default TopNewsList;
