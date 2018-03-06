@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-11 11:31:15
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-03-01 10:18:40
+ * @Last Modified time: 2018-03-06 16:59:53
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -21,11 +21,9 @@ import RecentNewsList from '../../components/recentNewsList';
 class News extends Component {
   constructor(props) {
     super(props);
-    let { match: { path } } = this.props;
-    path = path.substring(1, path.length);
     this.props.getNewsList();
     this.props.changeNewsDisplay();
-    this.props.changeNav(path);
+    this.props.changeNav('news');
 
     this.onClickNews = this.onClickNews.bind(this);
     this.onClickClose = this.onClickClose.bind(this);
@@ -64,9 +62,6 @@ class News extends Component {
 }
 
 News.propTypes = {
-  match: PropTypes.shape({
-    path: PropTypes.string
-  }).isRequired,
   newsList: PropTypes.shape({
     recent: PropTypes.array,
     top: PropTypes.array

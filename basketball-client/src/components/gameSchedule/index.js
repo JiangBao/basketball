@@ -3,13 +3,13 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-03-01 10:35:46
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-03-01 10:40:05
+ * @Last Modified time: 2018-03-06 17:06:50
  */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const GameSchedule = ({ schedule }) => (
-  <div className="game-schedule">{schedule}</div>
+  <div className="game-schedule">schedule</div>
 );
 
 GameSchedule.propTypes = {

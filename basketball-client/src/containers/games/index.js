@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-11 11:30:06
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-03-01 10:43:45
+ * @Last Modified time: 2018-03-06 17:07:07
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -16,10 +16,8 @@ import GameSchedule from '../../components/gameSchedule';
 class Games extends Component {
   constructor(props) {
     super(props);
-    let { match: { path } } = this.props;
-    path = path.substring(1, path.length);
     this.props.getGamesHome();
-    this.props.changeNav(path);
+    this.props.changeNav('games');
   }
 
   render() {
@@ -35,9 +33,6 @@ class Games extends Component {
 }
 
 Games.propTypes = {
-  match: PropTypes.shape({
-    path: PropTypes.string
-  }).isRequired,
   games: PropTypes.arrayOf(PropTypes.object).isRequired,
   schedule: PropTypes.arrayOf(PropTypes.object).isRequired,
   changeNav: PropTypes.func.isRequired,

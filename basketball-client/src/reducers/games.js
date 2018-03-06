@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-28 17:04:05
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-28 17:43:49
+ * @Last Modified time: 2018-03-06 17:07:13
  */
 import { combineReducers } from 'redux';
 import {
