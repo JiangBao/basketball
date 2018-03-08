@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-24 11:58:04
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-26 10:52:40
+ * @Last Modified time: 2018-03-07 10:35:02
  */
 import { combineReducers } from 'redux';
 import {
@@ -17,7 +17,7 @@ import {
  */
 const initState = {
   list: { recent: [], top: [] },
-  detail: { isShow: false }
+  detail: { isShow: false, title: '', image: '', content: '' }
 };
 
 export const list = (state = initState.list, action) => {

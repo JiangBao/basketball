@@ -1,0 +1,83 @@
+.game-list {
+  width: 90%;
+}
+
+.game-item {
+  float: left;
+  color: #333;
+  width: 48%;
+  min-height: 200px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px 2px #eee;
+}
+
+.game-item:nth-child(odd) {
+  margin-right: 20px;
+}
+
+.game-item-teams {
+  width: 68%;
+  height: 100px;
+  border: 1px solid #ccc;
+}
+
+.game-item-team {
+  position: relative;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.game-item-team:first-child {
+  border-bottom: 1px solid #eee;
+}
+
+.game-team-logo {
+  max-width: 36px;
+  max-height: 36px;
+}
+
+.game-status {
+  width: 30%;
+  height: 100px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 100px;
+  background-color: #ccc;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-left: none;
+}
+
+.game-status.active {
+  color: #fff;
+  background-color: #a41f24;
+}
+
+.game-status span {
+  display: block;
+}
+
+.game-team-item {
+  position: absolute;
+  display: inline-block;
+  top: 15px;
+  margin: 0;
+}
+
+.game-team-logo {
+  position: relative;
+  top: 7px;
+  margin: 0 20px;
+}
+
+.game-team-score {
+  right: 20px;
+  font-weight: bolder;
+}
+
+.game-team-score.win {
+  color: #a41f24;
+}

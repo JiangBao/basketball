@@ -14,6 +14,20 @@
   background: #fff;
 }
 
+li {
+  list-style: none;
+}
+
+.clearfix:after {
+  content:""; 
+  display: block; 
+  clear:both; 
+}
+
+.fl {
+  float: left;
+}
+
 [class*='svg-'] {
   width: 24px;
   height: 24px;

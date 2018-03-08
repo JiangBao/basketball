@@ -1,0 +1,101 @@
+.game-schedule {
+  margin-left: 10%;
+}
+
+.game-schedule-list-wrap {
+  float: left;
+  width: 80%;
+  height: 120px;
+  padding: 0 20px;
+  border: 1px solid #f4f4f4;
+  background-color: #f4f4f4;
+}
+
+.game-schedule-list {
+  position: relative;
+  top: 10px;
+  color: #999;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.game-schedule-arrow {
+  position: relative;
+  top: 30px;
+  float: left;
+  border: 1px solid #ccc;
+  transition: all .8s;
+}
+
+.game-schedule-arrow:hover {
+  background-color: #333;
+  border: 1px solid #333;
+  box-shadow: 5px 5px 10px #ccc;
+}
+
+.game-schedule-arrow:hover .svg-right-arrow {
+  fill: #fff;
+}
+
+.svg-right-arrow {
+  width: 30px;
+  height: 60px;
+}
+
+.game-schedule-left-arrow {
+  margin-right: 20px;
+}
+
+.game-schedule-right-arrow {
+  margin-left: 20px;
+}
+
+.game-schedule-left-arrow .svg-right-arrow {
+  transform: rotateZ(180deg);
+}
+
+.game-schedule-item {
+  float: left;
+  width: 14.1%;
+  height: 100%;
+  text-align: center;
+  border-right: 1px solid #ccc;
+}
+
+.game-schedule-item.active {
+  color: #333;
+  font-weight: bold;
+}
+
+.game-schedule-item.active .game-schedule-item-nums {
+  border-bottom: 3px solid #a41f24;
+}
+
+.game-schedule-item:last-child {
+  border-right: none;
+}
+
+.game-schedule-item p {
+  margin: 0;
+}
+
+.game-schedule-item-week {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+p.game-schedule-item-date {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.game-schedule-item-nums {
+  box-sizing: border-box;
+  height: 30px;
+  line-height: 30px;
+}
