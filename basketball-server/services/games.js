@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-02-28 15:29:41
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-02-28 16:51:32
+ * @Last Modified time: 2018-03-08 10:20:45
  */
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -67,7 +67,10 @@ class Games {
     const games = [];
 
     $('.gamecenter_content_l').find('.list_box').each((index, elem) => {
-      const status = $(elem).find('.team_vs_b').find('.b').text();
+      let status = $(elem).find('.team_vs_b').find('.b').text();
+      if (!status) {
+        status = $(elem).find('.team_vs_c').find('.b').text();
+      }
       const teams = $(elem).find('.team_vs_a');
       const team1_logo = $(teams).find('.team_vs_a_1').find('.img').find('img').attr('src');
       const team1_name = $(teams).find('.team_vs_a_1').find('.txt').find('a').text();
