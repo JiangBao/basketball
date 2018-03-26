@@ -3,7 +3,7 @@
  * @Author: JiangBao-jiangbao1123@gmail.com
  * @Date: 2018-03-07 16:55:48
  * @Last Modified by: JiangBao-jiangbao1123@gmail.com
- * @Last Modified time: 2018-03-08 10:39:49
+ * @Last Modified time: 2018-03-26 21:56:48
  */
 import React from 'react';
 import classnames from 'classnames';
@@ -17,7 +17,7 @@ const GameItem = ({
   }
 }) => {
   const { team1, team2 } = teams;
-  const isTeam1Win = team1.score > team2.score;
+  const isTeam1Win = parseInt(team1.score, 10) > parseInt(team2.score, 10);
 
   return (
     <li className="game-item">
